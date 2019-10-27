@@ -1,7 +1,5 @@
 package com.oberon.controllers;
 
-import com.oberon.business.bos.TokenBO;
-import lombok.AllArgsConstructor;
 import org.eclipse.microprofile.jwt.JsonWebToken;
 
 import javax.annotation.security.RolesAllowed;
@@ -15,30 +13,25 @@ import javax.ws.rs.core.SecurityContext;
 import java.security.Principal;
 
 @Path("/auth")
-@AllArgsConstructor
 @RequestScoped
-public class OAuthController {
+public class OAuthTestController {
 
     private JsonWebToken jwt;
-    private TokenBO tokenBO;
+
+    public OAuthTestController(JsonWebToken jwt) {
+        this.jwt = jwt;
+    }
 
     @GET
     @Path("/roles-allowed")
-    @RolesAllowed({"Echoer", "Subscriber"})
+    @RolesAllowed({"Echoer", "Subscriber", "test"})
     @Produces(MediaType.TEXT_PLAIN)
     public String helloRolesAllowed(@Context SecurityContext ctx) {
         Principal caller = ctx.getUserPrincipal();
         String name = caller == null ? "anonymous" : caller.getName();
         boolean hasJWT = jwt != null;
-        String helloReply = String.format("hello + %s, isSecure: %s, authScheme: %s, hasJWT: %s", name, ctx.isSecure(), ctx.getAuthenticationScheme(), hasJWT);
+        String helloReply = String.format("hello %s, isHttps: %s, authScheme: %s, hasJWT: %s", name, ctx.isSecure(), ctx.getAuthenticationScheme(), hasJWT);
         return helloReply;
     }
 
-    @GET
-    @Path("/token")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String generateToken() throws Exception {
-        String claimsJson = "/JwtClaims.json";
-        return tokenBO.generateTokenString(claimsJson);
-    }
 }
