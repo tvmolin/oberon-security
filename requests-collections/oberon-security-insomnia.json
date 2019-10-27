@@ -1,0 +1,183 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2019-10-27T17:59:15.182Z",
+  "__export_source": "insomnia.desktop.app:v7.0.3",
+  "resources": [
+    {
+      "_id": "req_8807f338a2fe41198cc51189aa376046",
+      "authentication": {
+        "disabled": false,
+        "token": "eyJraWQiOiIvcHJpdmF0ZUtleS5wZW0iLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJPYmVyb24tc2VjdXJpdHkiLCJqdGkiOiI5ZmQ0NDIyZC05OTE2LTRmMmMtOGViYy1lMmRhNGE3ZDAzZmUiLCJzdWIiOiJUaGlhZ28gTW9saW4iLCJhdWQiOiJvYmVyb24iLCJncm91cHMiOlsidGVzdCJdLCJpYXQiOjE1NzIxOTgyMDYsImF1dGhfdGltZSI6Ik51bWVyaWNEYXRlezE1NzIxOTgyMDYgLT4gT2N0IDI3LCAyMDE5IDI6NDM6MjYgUE0gQlJUfSIsImV4cCI6MTU3MjIwODIwNn0.RpEEZZmIUPeSvaJOmGb2UmO51-KxnaiTtrwTSbhkFJ6-sWcNYP4T_XnAffm5sNs-mcdtCbRA3V-UcMqmYzA-Veb51XMgiGFrqF2Nchkjq-uvpvlGNwkSdSBpVw95WBsHdO7sopSQTqAokm1r6nhiMuMVUemP5re9WxZALJ1zAUFHYgPgWp1Z8XHBwvu3G4njDpOt0YYssyXYXKao4DdFAafe_J2jc7VI7fPspxpiA0GFyU0mvh6Wq1yddAoNU2lB-lz7I580TGC9kRSyIr5OPsPIab8inaJmiFwbo3BexY4iYCiLUgZLZfKh8FVCeNdOnVvcuyhM7VPQwikLWV89KQ",
+        "type": "bearer"
+      },
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\n}"
+      },
+      "created": 1572099289969,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_4cb778bfaab345a8a8f7d55f7f229336",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1572140473400,
+      "method": "GET",
+      "modified": 1572198779114,
+      "name": "Authenticated endpoint",
+      "parameters": [],
+      "parentId": "fld_2edce22ada904dcea0ae997cee4aa090",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "localhost:8080/auth/roles-allowed",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_2edce22ada904dcea0ae997cee4aa090",
+      "created": 1572198768140,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1572198768141,
+      "modified": 1572198768140,
+      "name": "Oberon-security",
+      "parentId": "wrk_50b6c14e871a48d386a53760b82e9843",
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_50b6c14e871a48d386a53760b82e9843",
+      "created": 1572042646084,
+      "description": "",
+      "modified": 1572042646084,
+      "name": "Insomnia",
+      "parentId": null,
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_ab0909d7f30c49dd973e23a19ba5d6d6",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"userName\": \"teste5\",\n\t\"password\": \"123\",\n\t\"grantType\": \"password\",\n\t\"client\": \"oberon\"\n}"
+      },
+      "created": 1572140473350,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_536b6c5877ca4609a96fecc6bc1be33d",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1572140473350,
+      "method": "POST",
+      "modified": 1572198802746,
+      "name": "Create token",
+      "parameters": [],
+      "parentId": "fld_2edce22ada904dcea0ae997cee4aa090",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "localhost:8080/tokens",
+      "_type": "request"
+    },
+    {
+      "_id": "req_73c82e6ec2e14c8d9fd007bc63d6901c",
+      "authentication": {},
+      "body": {},
+      "created": 1572194150454,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1572140473300,
+      "method": "POST",
+      "modified": 1572198775615,
+      "name": "LinkSubjectToClient",
+      "parameters": [],
+      "parentId": "fld_2edce22ada904dcea0ae997cee4aa090",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "localhost:8080/subjects/161/link/oberon",
+      "_type": "request"
+    },
+    {
+      "_id": "req_2db395b6d11a4eec8f0d1ced48bdad5c",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"userName\": \"teste5\",\n\t\"password\": \"123\",\n\t\"email\": \"teste@a.com\",\n\t\"name\": \"Thiago Molin\"\n}"
+      },
+      "created": 1572137087542,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_8cdea196707e47f980d020316d7b4980",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1572140473250,
+      "method": "POST",
+      "modified": 1572198792623,
+      "name": "Create Subject",
+      "parameters": [],
+      "parentId": "fld_2edce22ada904dcea0ae997cee4aa090",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "localhost:8080/subjects",
+      "_type": "request"
+    },
+    {
+      "_id": "env_fab2540250a1bd7d4388572f8e8999c9f1345a88",
+      "color": null,
+      "created": 1572042646120,
+      "data": {},
+      "dataPropertyOrder": {},
+      "isPrivate": false,
+      "metaSortKey": 1572042646120,
+      "modified": 1572099157232,
+      "name": "Base Environment",
+      "parentId": "wrk_50b6c14e871a48d386a53760b82e9843",
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_fab2540250a1bd7d4388572f8e8999c9f1345a88",
+      "cookies": [],
+      "created": 1572042646121,
+      "modified": 1572042646121,
+      "name": "Default Jar",
+      "parentId": "wrk_50b6c14e871a48d386a53760b82e9843",
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "env_86d5e4c9bd3f4137a57420c2b388386e",
+      "color": null,
+      "created": 1572099161731,
+      "data": {},
+      "dataPropertyOrder": null,
+      "isPrivate": false,
+      "metaSortKey": 1572099161731,
+      "modified": 1572099161731,
+      "name": "New Environment",
+      "parentId": "env_fab2540250a1bd7d4388572f8e8999c9f1345a88",
+      "_type": "environment"
+    }
+  ]
+}
